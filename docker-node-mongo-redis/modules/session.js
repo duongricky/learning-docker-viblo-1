@@ -12,9 +12,5 @@ module.exports = session({
   }),
   secret: 'supersecret',
   resave: false,
-  saveUninitialized: true,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production'
-  },
-  proxy: true
+  saveUninitialized: true
 })
