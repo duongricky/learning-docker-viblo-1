@@ -4,6 +4,8 @@ const User = require('../models/User')
 
 describe('Login', () => {
   beforeAll(async () => {
+    await User.deleteMany({}) // clear DB before all tests
+
     const user = new User({
       email: 'test@example.com',
       password: '123456',
@@ -14,7 +16,7 @@ describe('Login', () => {
   })
 
   afterAll(async () => {
-    await User.deleteMany({}) // clear DB before each test
+    await User.deleteMany({}) // clear DB after all tests
   })
 
   describe('Post /login', () => {
