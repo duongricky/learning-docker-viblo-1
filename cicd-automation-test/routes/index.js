@@ -45,8 +45,6 @@ router.post('/login', async (req, res, next) => {
 
     return res.json(result)
   } catch (error) {
-    console.log(error)
-
     return res.status(500).send({
       message: 'Server error'
     })
@@ -96,8 +94,6 @@ router.post('/register', async (req, res, next) => {
       message: 'success'
     })
   } catch (error) {
-    console.log(error)
-
     if (error.name === 'ValidationError') {
       return res.status(400).json({ error: error.message })
     }
