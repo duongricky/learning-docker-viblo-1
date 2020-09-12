@@ -8,7 +8,12 @@ const UserController = require('../controllers/UserController')
 const ProductController = require('../controllers/ProductController')
 
 router.get('/login', (req, res, next) => {
-  res.render('auth/login', { title: 'Login', message: req.flash('message'), success_message: req.flash('success_message') })
+  res.render('auth/login', {
+    title: 'Login',
+    message: req.flash('message'),
+    error: req.flash('error'),
+    success_message: req.flash('success_message')
+  })
 })
 
 router.post('/login', passport.authenticate('local', {
