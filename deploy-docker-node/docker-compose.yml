@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   app:
-    image: learning-docker:non-root
+    image: learning-docker:deploy-node
     volumes:
       - ./public/images:/app/public/images
       # - ./:/app # mount từ môi trường gốc vào trong để nếu các bạn thay đổi code thì bên trong sẽ tự động cập nhật
