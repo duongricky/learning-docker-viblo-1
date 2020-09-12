@@ -24,11 +24,11 @@ services:
     volumes:
       - .docker/data/db:/data/db
     restart: unless-stopped
-    user: 1000:1000
+    user: "1000:1000"
   
   redis:
     image: redis:5-alpine
     volumes:
       - .docker/data/redis:/data
     restart: unless-stopped
-    user: 1000:1000
+    user: "1000:1000"
