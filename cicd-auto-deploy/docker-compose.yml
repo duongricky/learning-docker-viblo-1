@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   app:
-    image: registry.gitlab.com/maitrungduc1410/cicd-automation-test:latest
+    image: registry.gitlab.com/maitrungduc1410/cicd-auto-deploy:latest
     ports:
       - "3000:3000"
     restart: unless-stopped
