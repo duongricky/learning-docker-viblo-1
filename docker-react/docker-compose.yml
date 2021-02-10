@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  app:
+    image: learning-docker/react:v1
+    ports:
+      - "5000:80"
+    restart: unless-stopped

@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    image: learning-docker/vue:v1
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "5000:8080"
+    restart: unless-stopped
