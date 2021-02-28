@@ -11,7 +11,9 @@ const flash = require('connect-flash')
 const dbHost = process.env.DB_HOST || 'localhost'
 const dbPort = process.env.DB_PORT || 27017
 const dbName = process.env.DB_NAME || 'my_db_name'
-const mongoUrl = `mongodb://${dbHost}:${dbPort}/${dbName}`
+const dbUser = process.env.DB_USER
+const dbUserPassword = process.env.DB_PASSWORD
+const mongoUrl = `mongodb://${dbUser}:${dbUserPassword}@${dbHost}:${dbPort}/${dbName}`
 
 const connectWithRetry = function () { // when using with docker, at the time we up containers. Mongodb take few seconds to starting, during that time NodeJS server will try to connect MongoDB until success.
   return mongoose.connect(mongoUrl, { useNewUrlParser: true, useFindAndModify: false }, (err) => {
